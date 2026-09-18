@@ -1,5 +1,14 @@
 # @truefoundry/trueforge
 
+## 0.2.0-rc.15
+
+### Patch Changes
+
+- 12978ac: Accept `x-tfg-mcp` and `x-tfg-skills` in TrueFoundry mode: MCP servers and skills a request defines by name, taking precedence over the tenant registry for that request only. Both resolve for spec validation and turn execution; an unfiltered list still shows only configured resources, so request-scoped ones never appear in settings. Inline MCP credentials come from the manifest's own `auth.headers`, which lets a rotating token ride each turn.
+- fad55d8: Persist turn ownership as `active_executor_id` on the turn row, mint plain ULID turn ids, and peer cancel via the DB owner instead of embedding the executor in the turn id.
+- Updated dependencies [fad55d8]
+  - @truefoundry/trueforge-core@0.2.0-rc.7
+
 ## 0.2.0-rc.14
 
 ### Patch Changes
